@@ -9,3 +9,7 @@ git clone
 ```sh
 git init
 ```
+
+```sh
+git rebase -i 
+```
