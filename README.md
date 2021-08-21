@@ -1,16 +1,3 @@
-# practice_repo
-
-#### リモートからリポジトリを取得
-```sh
-git clone
-```
-
-#### ローカルでリポジトリ作成
-```sh
-git init
-```
-
-
 # 以下でGitのログを改変する
 
 ## A-1 コミットログの確認(1行ずつ)
@@ -18,7 +5,7 @@ git init
 ```sh
 git log --oneline
 ```
->`cccccc c [comme-id, commit-message]`<br>
+`cccccc c [comme-id, commit-message]`<br>
 `bbbbbb b`<br>
 `aaaaaa a`
 
@@ -33,7 +20,7 @@ git rebase -i aaaaaa
 git rebase -i (--interactive)
 ```
 
->`pick bbbbbb b [command, comme-id, commit-message]`<br>
+`pick bbbbbb b [command, comme-id, commit-message]`<br>
 `pick cccccc c`<br>
 
 
@@ -44,7 +31,8 @@ git rebase -i (--interactive)
 | (e)edit	        |コミット自体の内容を編集。 |
 | (s)squash       |直前のpickを指定したコミットに統合。メッセージも統合。 |
 | (f)fixup        |直前のpickを指定したコミットに統合。メッセージは破棄。 |
-[vimコマンドはこちら](#主に使うvimコマンド)
+
+[vimはこちら](#主に使うvimコマンド)
 
 ## A-4 リモートブランチのコミットを上書き
 
@@ -68,3 +56,5 @@ git rebase --abort
 | i               | 入力モード |
 | ZZ	            | 保存して閉じる |
 | :q!	            | 保存せずに終了 |
+
+[よく使う Vim のコマンドまとめ](https://qiita.com/hide/items/5bfe5b322872c61a6896)
