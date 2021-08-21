@@ -4,24 +4,39 @@
 
 ```sh
 git log --oneline
+
+[コミットID, コミットメッセージ]
 ```
-`cccccc c [comme-id, commit-message]`<br>
+`cccccc c`<br>
 `bbbbbb b`<br>
 `aaaaaa a`
 
 
-## A-2 cとbを a にリベースする場合
+## A-2 リベース
+```sh
+git rebase -i (--interactive)
+
+[コマンド, コミットID, コミットメッセージ]
+```
+`pick bbbbbb b`<br>
+`pick cccccc c`<br>
+`pick aaaaaa a`<br>
+
+1. コミットIDを指定（aaaaaaに、bbbbbbとcccccc をにリベース）
+
 ```sh
 git rebase -i aaaaaa
 ```
-
-## A-3 指示コマンドを指定
-```sh
-git rebase -i (--interactive)
-```
-
-`pick bbbbbb b [command, comme-id, commit-message]`<br>
+`pick bbbbbb b`<br>
 `pick cccccc c`<br>
+
+2. コミット履歴から指定（aaaaaaのコミットを残して、bbbbbbとccccccを統合）
+```sh
+git rebase -i HEAD~3
+```
+`pick aaaaaa a`<br>
+`s bbbbbb b`<br>
+`s cccccc c`<br>
 
 
 | コマンド         | 説明 |
@@ -34,19 +49,20 @@ git rebase -i (--interactive)
 
 [vimはこちら](#主に使うvimコマンド)
 
+## A-3 コミットメッセージの修正
+一番上のコミットのみ残す場合、2行目以下を削除する
+
 ## A-4 リモートブランチのコミットを上書き
 
 ```sh
 git push -f (--force)
 ```
 
+# その他
 ## リベースを削除して戻す
-
 ```sh
 git rebase --abort
 ```
-
-
 
 ## 主に使うvimコマンド
 
@@ -57,4 +73,4 @@ git rebase --abort
 | ZZ	            | 保存して閉じる |
 | :q!	            | 保存せずに終了 |
 
-[よく使う Vim のコマンドまとめ](https://qiita.com/hide/items/5bfe5b322872c61a6896)
+参考：[よく使う Vim のコマンドまとめ](https://qiita.com/hide/items/5bfe5b322872c61a6896)
