@@ -1,3 +1,7 @@
+- A. ログの改変
+- B. 最新develop取得(git pull --rebase origin develop)
+- C. rebase時のプッシュ解決(git push --force-with-lease)
+
 # 以下でGitのログを改変する
 
 ## A-1 コミットログの確認(1行ずつ)
