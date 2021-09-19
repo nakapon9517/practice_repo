@@ -1,6 +1,6 @@
 - A. ログの改変
 - B. 最新develop取得(git pull --rebase origin develop)
-- C. rebase時のプッシュ解決(git push --force-with-lease)
+- C. rebase時のプッシュ解決(git push --force-with-lease) ※Bでエラーの場合
 
 # 以下でGitのログを改変する
 
