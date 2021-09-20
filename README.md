@@ -9,8 +9,8 @@
 - [C. rebase時のプッシュ解決(git push --force-with-lease)](#c-rebase時のプッシュ解決git-push---force-with-lease)
     - [C-1 force時にローカルが最新でない場合はエラーとなる](#c-1-force時にローカルが最新でない場合はエラーとなる)
 - [その他](#その他)
-  - [リベースを戻す](#リベースを戻す)
-  - [vim](#vim)
+    - [リベースを戻す](#リベースを戻す)
+    - [vim](#vim)
 
 # A. ログの改変
 
@@ -29,7 +29,6 @@ git rebase -i (--interactive)
 
 [コマンド, コミットID, コミットメッセージ]
 ```
-
 
 ```sh
 git rebase -i aaaaaa // コミットIDを指定（aaaaaaに、bbbbbbとcccccc をにリベース）
@@ -77,14 +76,14 @@ git push --force-with-lease
 <br>
 
 # その他
-## リベースを戻す
+### リベースを戻す
 ```sh
 git rebase --abort
 ```
 
 <br>
 
-## vim
+### vim
 
 | コマンド         | 説明 |
 | --------------- | ------- |
