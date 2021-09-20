@@ -1,47 +1,40 @@
-- A. ログの改変
-- B. 最新develop取得(git pull --rebase origin develop)
-- C. rebase時のプッシュ解決(git push --force-with-lease) ※Bでエラーの場合
+## Practice git
+- [A. ログの改変](#a-ログの改変)
+    - [A-1 コミットログの確認(1行ずつ)](#a-1-コミットログの確認1行ずつ)
+    - [A-2 リベース](#a-2-リベース)
+    - [A-3 コミットメッセージの修正](#a-3-コミットメッセージの修正)
+    - [A-4 リモートブランチのコミットを上書き](#a-4-リモートブランチのコミットを上書き)
+- [B. 最新developの取得(git pull --rebase origin develop)](#b-最新developの取得git-pull---rebase-origin-develop)
+    - [B-1 最新のリモートリポジトリ取得](#b-1-最新のリモートリポジトリ取得)
+- [C. rebase時のプッシュ解決(git push --force-with-lease)](#c-rebase時のプッシュ解決git-push---force-with-lease)
+    - [C-1 force時にローカルが最新でない場合はエラーとなる](#c-1-force時にローカルが最新でない場合はエラーとなる)
+- [その他](#その他)
+  - [リベースを戻す](#リベースを戻す)
+  - [vim](#vim)
 
-# 以下でGitのログを改変する
+# A. ログの改変
 
-## A-1 コミットログの確認(1行ずつ)
+### A-1 コミットログの確認(1行ずつ)
 
 ```sh
 git log --oneline
 
 [コミットID, コミットメッセージ]
 ```
-`cccccc c`<br>
-`bbbbbb b`<br>
-`aaaaaa a`
 
 
-## A-2 リベース
+### A-2 リベース
 ```sh
 git rebase -i (--interactive)
 
 [コマンド, コミットID, コミットメッセージ]
 ```
-`pick bbbbbb b`<br>
-`pick cccccc c`<br>
-`pick aaaaaa a`<br>
 
-1. コミットIDを指定（aaaaaaに、bbbbbbとcccccc をにリベース）
 
 ```sh
-git rebase -i aaaaaa
+git rebase -i aaaaaa // コミットIDを指定（aaaaaaに、bbbbbbとcccccc をにリベース）
+git rebase -i HEAD~3 // コミット履歴から指定（aaaaaaのコミットを残して、bbbbbbとccccccを統合）
 ```
-`pick bbbbbb b`<br>
-`pick cccccc c`<br>
-
-2. コミット履歴から指定（aaaaaaのコミットを残して、bbbbbbとccccccを統合）
-```sh
-git rebase -i HEAD~3
-```
-`pick aaaaaa a`<br>
-`s bbbbbb b`<br>
-`s cccccc c`<br>
-
 
 | コマンド         | 説明 |
 | --------------- | ------- |
@@ -53,25 +46,45 @@ git rebase -i HEAD~3
 
 [vimはこちら](#主に使うvimコマンド)
 
-## A-3 コミットメッセージの修正
+### A-3 コミットメッセージの修正
 一番上のコミットのみ残す場合、2行目以下を削除する
 
-## A-4 リモートブランチのコミットを上書き
+### A-4 リモートブランチのコミットを上書き
 
 ```sh
 git push -f (--force)
 ```
----
+<br>
 
-## 最新developの取得(git pull --rebase origin develop)
+# B. 最新developの取得(git pull --rebase origin develop)
+
+### B-1 最新のリモートリポジトリ取得
+```sh
+git pull --rebase origin develop
+```
+
+<br>
+
+# C. rebase時のプッシュ解決(git push --force-with-lease)
+
+※[ B-1 ](#B-1)にてエラーが発生した場合
+
+### C-1 force時にローカルが最新でない場合はエラーとなる
+```sh
+git push --force-with-lease
+```
+
+<br>
 
 # その他
-## リベースを削除して戻す
+## リベースを戻す
 ```sh
 git rebase --abort
 ```
 
-## 主に使うvimコマンド
+<br>
+
+## vim
 
 | コマンド         | 説明 |
 | --------------- | ------- |
