@@ -44,7 +44,7 @@ git push --force-with-lease
 ## D. 強制的にリモートブランチに合わせる
 ```sh
 git fetch origin
-git reset --hard origin/master
+git reset --hard origin/develop
 ```
 
 # その他
