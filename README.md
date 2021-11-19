@@ -3,6 +3,8 @@
 - [B. 最新develop取得(git pull --rebase origin develop)](#b-最新develop取得)
 - [C. rebaseプッシュ解決(git push --force-with-lease)](#c-rebaseプッシュ解決)
 - [D. 強制的にリモートのブランチに合わせる(git reset --hard origin/develop)](#d-強制的にリモートブランチに合わせる)
+- [E. 一つ前のコミットを取り消す(git reset --hard HEAD^](#e-一つ前のコミットを取り消す)
+- 
 - [その他](#その他)
     - [リベースを戻す](#リベースを戻す)
     - [vim](#vim)
