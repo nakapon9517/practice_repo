@@ -4,7 +4,7 @@
 - [C. rebaseプッシュ解決(git push --force-with-lease)](#c-rebaseプッシュ解決)
 - [D. 強制的にリモートのブランチに合わせる(git reset --hard origin/develop)](#d-強制的にリモートブランチに合わせる)
 - [E. 一つ前のコミットを取り消す(git reset --hard HEAD^](#e-一つ前のコミットを取り消す)
-- 
+- [F. 実ファイルを残しつつ過去コミットを取り消す](#f-実ファイルを残しつつ過去コミットを取り消す)
 - [その他](#その他)
     - [リベースを戻す](#リベースを戻す)
     - [vim](#vim)
@@ -54,6 +54,13 @@ git reset --hard origin/develop
 https://qiita.com/maejimayuto/items/30bfab250186a00ae884
 ```sh
 git reset --hard HEAD^
+```
+
+## F. 実ファイルを残しつつ過去コミットを取り消す
+```sh
+1. git rebase -i develop // 1件目以外を squash して一つのコミットに
+2. git reset HEAD^       // 実ファイルはそのままに、1でまとめたコミットを取り消し
+3. git add ...           // 意味のある、関連の高いファイル同士のみ選んでコミット
 ```
 
 ## その他
