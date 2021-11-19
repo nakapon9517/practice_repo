@@ -47,6 +47,13 @@ git fetch origin
 git reset --hard origin/develop
 ```
 
+## E. 一つ前のコミットを取り消す
+ここ一旦見てsohtとhardで異なる
+https://qiita.com/maejimayuto/items/30bfab250186a00ae884
+```sh
+git reset --hard HEAD^
+```
+
 ## その他
 ### リベースを戻す
 ```sh
