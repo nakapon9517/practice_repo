@@ -47,7 +47,7 @@ git fetch origin
 git reset --hard origin/develop
 ```
 
-# その他
+## その他
 ### リベースを戻す
 ```sh
 git rebase --abort
