@@ -1,79 +1,57 @@
-## Practice git
-- [A. コミットログの整理（git rebase -i develop）](#a-ログの改変)
-- [B. 最新developの取得(git pull --rebase origin develop)](#b-最新developの取得)
-- [C. rebase時のプッシュ解決(git push --force-with-lease)](#c-rebase時のプッシュ解決)
+## 概要
+- [A. コミットログ整理（git rebase -i develop）](#a-ログ改変)
+- [B. 最新develop取得(git pull --rebase origin develop)](#b-最新develop取得)
+- [C. rebaseプッシュ解決(git push --force-with-lease)](#c-rebaseプッシュ解決)
 - [D. 強制的にリモートのブランチに合わせる(git reset --hard origin/develop)](#d-強制的にリモートブランチに合わせる)
 - [その他](#その他)
     - [リベースを戻す](#リベースを戻す)
     - [vim](#vim)
 
-## A. ログの改変
-
-A-1 コミットログの確認(1行ずつ)
-
+## A. ログ改変
+コミットログ確認(1行ずつ)
 ```sh
 git log --oneline
 ```
 
-A-2 リベース
-```sh
-git rebase -i (--interactive)
-```
-
+リベース
 ```sh
 git rebase -i develop // ブランチ指定
 git rebase -i aaaaaa  // コミットIDを指定（aaaaaaに、bbbbbbとcccccc をにリベース）
 git rebase -i HEAD~3  // コミット履歴から指定（aaaaaaのコミットを残して、bbbbbbとccccccを統合）
 ```
-[コマンド](#コマンド)
-[vim](#主に使うvimコマンド)
 
-A-3 コミットメッセージの修正
-一番上のコミットのみ残す場合、2行目以下を削除する
+[コマンド](#コマンド) / [vim](#vim)
 
-A-4 リモートブランチのコミットを上書き
+- コミットメッセージの修正 ※一番上のコミットのみ残す(p)場合、2行目以下を削除(s)
+- リモートブランチのコミットを上書き
 
 ```sh
 git push -f (--force)
+git push --force-with-lease
 ```
-<br>
-
-## B. 最新developの取得
-
-B-1 最新のリモートリポジトリ取得
+## B. 最新develop取得
+最新リモートリポジトリ取得
 ```sh
 git pull --rebase origin develop
 ```
-
-<br>
-
-## C. rebase時のプッシュ解決
-
+## C. rebaseプッシュ解決
 ※[ B-1 ](#B-1)にてエラーが発生した場合
-
-C-1 force時にローカルが最新でない場合はエラーとなる
+force時にローカルが最新でない場合はエラーとなる
 ```sh
 git push --force-with-lease
 ```
 
-<br>
-
 ## D. 強制的にリモートブランチに合わせる
-
 ```sh
 git fetch origin
 git reset --hard origin/master
 ```
-
-<br>
 
 # その他
 ### リベースを戻す
 ```sh
 git rebase --abort
 ```
-
-<br>
 
 ### コマンド
 | コマンド         | 説明 |
