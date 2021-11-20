@@ -37,7 +37,7 @@ git push --force-with-lease
 git pull --rebase origin develop
 ```
 ## C. rebaseプッシュ解決
-※[ B-1 ](#B-1)にてエラーが発生した場合
+※B-1にてエラーが発生した場合
 force時にローカルが最新でない場合はエラーとなる
 ```sh
 git push --force-with-lease
@@ -79,7 +79,6 @@ git rebase --abort
 | (f)fixup        |直前のpickを指定したコミットに統合。メッセージは破棄。 |
 
 ### vim
-
 | コマンド         | 説明 |
 | --------------- | ------- |
 | ESC	            | コミットをそのまま残す。 |
