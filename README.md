@@ -5,6 +5,7 @@
 - [D. 強制的にリモートのブランチに合わせる(git reset --hard origin/develop)](#d-強制的にリモートブランチに合わせる)
 - [E. 一つ前のコミットを取り消す(git reset --hard HEAD^](#e-一つ前のコミットを取り消す)
 - [F. 実ファイルを残しつつ過去コミットを取り消す](#f-実ファイルを残しつつ過去コミットを取り消す)
+- [G. GitCommitEmoji](https://gist.github.com/parmentf/035de27d6ed1dce0b36a)
 - [その他](#その他)
     - [リベースを戻す](#リベースを戻す)
     - [vim](#vim)
