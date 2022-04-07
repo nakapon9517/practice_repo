@@ -6,6 +6,7 @@
 - [E. 一つ前のコミットを取り消す(git reset --hard HEAD^](#e-一つ前のコミットを取り消す)
 - [F. 実ファイルを残しつつ過去コミットを取り消す](#f-実ファイルを残しつつ過去コミットを取り消す)
 - [G. GitCommitEmoji](https://gist.github.com/parmentf/035de27d6ed1dce0b36a)
+- [H. 派生元ブランチを間違えた場合](#h-派生元ブランチを切り替える)
 - [その他](#その他)
     - [リベースを戻す](#リベースを戻す)
     - [vim](#vim)
@@ -62,6 +63,17 @@ git reset --hard HEAD^
 1. git rebase -i develop // 1件目以外を squash して一つのコミットに
 2. git reset HEAD^       // 実ファイルはそのままに、1でまとめたコミットを取り消し
 3. git add ...           // 意味のある、関連の高いファイル同士のみ選んでコミット
+```
+
+## H. 派生元ブランチを切り替える
+```
+branches
+  L develop(正しい派生元)
+    L branch-a(作業中)
+    L branch-b(誤った派生元)
+```
+```sh
+git rebase --onto origin/develop branch-b branch-a
 ```
 
 ## その他
