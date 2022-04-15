@@ -7,6 +7,7 @@
 - [F. 実ファイルを残しつつ過去コミットを取り消す](#f-実ファイルを残しつつ過去コミットを取り消す)
 - [G. GitCommitEmoji](https://gist.github.com/parmentf/035de27d6ed1dce0b36a)
 - [H. 派生元ブランチを間違えた場合](#h-派生元ブランチを切り替える)
+- [I. スタッシュ](#i-スタッシュ)
 - [その他](#その他)
     - [リベースを戻す](#リベースを戻す)
     - [vim](#vim)
@@ -75,6 +76,23 @@ branches
 ```sh
 git rebase --onto origin/develop branch-b branch-a
 ```
+
+## I. スタッシュ
+変更ファイルの退避
+```
+git stash -u(--include-untracked 新規作成ファイルも退避) 
+```
+退避リストの確認
+```
+$ git stash list
+stash@{0}: WIP on aaaa: xxxx
+stash@{1}: WIP on bbbb: xxxx
+```
+変更を戻す場合
+```
+git stash apply stash@{0}
+```
+
 
 ## その他
 ### リベースを戻す
