@@ -147,3 +147,4 @@ git rebase --abort
 参考：[よく使う Vim のコマンドまとめ](https://qiita.com/hide/items/5bfe5b322872c61a6896)
 
 a
+b
